@@ -205,7 +205,7 @@
     </footer>
 
     <script>
-        const csvUrl = 'https://raw.githubusercontent.com/TON_USER/TON_DEPOT/main/ton_fichier.csv';
+        const csvUrl = 'https://raw.githubusercontent.com/Lidaab/Alumni/refs/heads/main/BDD';
 
         fetch(csvUrl)
             .then(response => response.text())
