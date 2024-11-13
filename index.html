@@ -207,10 +207,17 @@
     <script>
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRd5_csNX0ZuiZf6XbWtPBsUOOBrXoFYXZcgugzMsmIq51p2-N_EVyc6ol8pg7Mc5FSbhjVcBv3fns3/pub?gid=0&single=true&output=csv';
 
-        fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRd5_csNX0ZuiZf6XbWtPBsUOOBrXoFYXZcgugzMsmIq51p2-N_EVyc6ol8pg7Mc5FSbhjVcBv3fns3/pub?gid=0&single=true&output=csv')
+     fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRd5_csNX0ZuiZf6XbWtPBsUOOBrXoFYXZcgugzMsmIq51p2-N_EVyc6ol8pg7Mc5FSbhjVcBv3fns3/pub?gid=0&single=true&output=csv')
     .then(response => response.text())
     .then(data => {
         const rows = data.split("\n");
+
+        // Ajoute ce bloc pour voir les données dans la console
+        rows.forEach(row => {
+            const columns = row.split(",");
+            console.log(columns); // Affiche chaque ligne en tant que tableau
+        });
+
         rows.forEach(row => {
             const columns = row.split(",");
             const [nom, prenom, promotion, annee, campus, , , photo, linkedin] = columns;
@@ -228,6 +235,7 @@
         });
     })
     .catch(error => console.error("Erreur lors du chargement du CSV :", error));
+
 
     </script>
 </body>
